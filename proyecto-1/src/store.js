@@ -5,10 +5,23 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    frutas:[
+      {nombre:'Manzana',cantidad:0},
+      {nombre:'Pera',cantidad:0},
+      {nombre:'Naranja',cantidad:0}
+    ]
   },
   mutations: {
-
+    aumentar(state, index){
+      state.frutas[index].cantidad++
+    },
+    reiniciar(state){
+      //recorro frutas con un forEach 
+      state.frutas.forEach(elemento => {
+        //por cada elemento.cantidad le pondra 0
+        elemento.cantidad = 0
+      })
+    }
   },
   actions: {
 
